@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/10430
 
-// 단순 연산 문제
+// 백준 10430 
 import java.io.*;
 
 public class Main {
