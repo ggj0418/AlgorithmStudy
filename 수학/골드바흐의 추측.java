@@ -1,5 +1,5 @@
 // https://www.acmicpc.net/problem/6588
-// 백준 6588번 골드바흐의 
+// 백준 6588번 골드바흐의 추측
 import java.io.*;
 
 public class Main {
