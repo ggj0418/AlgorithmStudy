@@ -10,20 +10,21 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
-		BufferedReader bufR = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufR = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufW = new BufferedWriter(new OutputStreamWriter(System.out));
-		int M = Integer.parseInt(bufR.readLine());
-		int set = 0;
+        
+	int M = Integer.parseInt(bufR.readLine());
+        int set = 0;
         StringBuilder sb = new StringBuilder();
 		
-		for(int i=0;i<M;i++) {
+        for(int i=0;i<M;i++) {
             StringTokenizer st = new StringTokenizer(bufR.readLine());
-		    String operation = st.nextToken();
-		    int num;
+            String operation = st.nextToken();
+            int num;
 		    
-		    switch(operation) {
-		        case "add":
+            switch(operation) {
+                case "add":
                     num = Integer.parseInt(st.nextToken());
                     set |= (1 << (num - 1));
                     break;
@@ -45,11 +46,11 @@ public class Main {
                 case "empty" :
                     set &= 0;
                     break;
-		    }
-		}
+                }
+            }
 		
         bufW.write(sb.toString());
         bufW.flush();
         bufW.close();
-	}
+    }
 }
