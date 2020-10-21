@@ -9,19 +9,19 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader bufR = new BufferedReader(new InputStreamReader(System.in));
 		
-		    int N = Integer.parseInt(bufR.readLine());
-    		int[][] map = new int[N+1][2];
+        int N = Integer.parseInt(bufR.readLine());
+        int[][] map = new int[N+1][2];
 		
-		    for(int i=0;i<N;i++) {
-    		    String[] splitArray = bufR.readLine().split(" ");
+        for(int i=0;i<N;i++) {
+            String[] splitArray = bufR.readLine().split(" ");
 		    
-    		    map[i][0] = Integer.parseInt(splitArray[0]);
-    		    map[i][1] = Integer.parseInt(splitArray[1]);
-    		}
+            map[i][0] = Integer.parseInt(splitArray[0]);
+            map[i][1] = Integer.parseInt(splitArray[1]);
+        }
 		
-    		powerSet(0, N, map, 0);
+        powerSet(0, N, map, 0);
 		
-    		System.out.println(max);
+        System.out.println(max);
     }
 	
     public static void powerSet(int index, int N, int[][] map, int sum) {
