@@ -4,51 +4,51 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 		BufferedReader bufR = new BufferedReader(new InputStreamReader(System.in));
-    BufferedWriter bufW = new BufferedWriter(new OutputStreamWriter(System.out));
+		BufferedWriter bufW = new BufferedWriter(new OutputStreamWriter(System.out));
 		int N = Integer.parseInt(bufR.readLine());
 		int count = 1;
 		
 		while(N != 0) {
-		    String[] girls = new String[N];
-		    String[] backPhone = new String[N];
-		    for(int i=0;i<N;i++) {
-    		    girls[i] = bufR.readLine();
-		    }
+			String[] girls = new String[N];
+			String[] backPhone = new String[N];
+			for(int i=0;i<N;i++) {
+				girls[i] = bufR.readLine();
+			}
 		    
-		    Arrays.fill(backPhone, "0");
-		    for(int i=0;i<2*N-1;i++) {
-		        String[] splitArray = bufR.readLine().split(" ");
+			Arrays.fill(backPhone, "0");
+			for(int i=0;i<2*N-1;i++) {
+				String[] splitArray = bufR.readLine().split(" ");
 		        
-		        int index = Integer.parseInt(splitArray[0]) - 1;
-		        String returnFlag = splitArray[1];
+				int index = Integer.parseInt(splitArray[0]) - 1;
+				String returnFlag = splitArray[1];
 		        
-		        if(backPhone[index].equals("A")) {
-		            if(returnFlag.equals("B")) {
-		                backPhone[index] = "Good";
-		            }
-		        } else if(backPhone[index].equals("B")) {
-		            if(returnFlag.equals("A")) {
-		                backPhone[index] = "Good";
-		            }
-		        } else {
-		            backPhone[index] = returnFlag;
-		        }
-		    }
+				if(backPhone[index].equals("A")) {
+					if(returnFlag.equals("B")) {
+						backPhone[index] = "Good";
+					}
+				} else if(backPhone[index].equals("B")) {
+					if(returnFlag.equals("A")) {
+						backPhone[index] = "Good";
+					}
+				} else {
+					backPhone[index] = returnFlag;
+				}
+			}
 		    
-		    for(int i=0;i<N;i++) {
-		        if(backPhone[i].equals("A") || backPhone[i].equals("B")) {
-		            bufW.write(count + " " + girls[i] + "\n");
-		            count++;
-		        }
-		    }
+			for(int i=0;i<N;i++) {
+				if(backPhone[i].equals("A") || backPhone[i].equals("B")) {
+					bufW.write(count + " " + girls[i] + "\n");
+					count++;
+				}
+			}
 		    
-		    N = Integer.parseInt(bufR.readLine());
+			N = Integer.parseInt(bufR.readLine());
 		}
 		
-    bufW.flush();
-    bufW.close();
+		bufW.flush();
+		bufW.close();
 		bufR.close();
 	}
 }
