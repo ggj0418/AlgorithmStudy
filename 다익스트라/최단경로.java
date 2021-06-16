@@ -35,7 +35,7 @@ public class Main {
         
         for(int i = 1; i <= v; i++) {
             out.write(values[i] != Integer.MAX_VALUE ? Integer.toString(values[i]) : "INF");
-			      out.newLine();
+            out.newLine();
         }
         
         out.flush();
@@ -72,9 +72,9 @@ public class Main {
         int value;
         
         public Edge(int destination, int value) {
-			    this.destination = destination;
-			    this.value = value;
-		  }
+	    this.destination = destination;
+            this.value = value;
+        }
 
         @Override
         public int compareTo(Edge o1) {
